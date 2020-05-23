@@ -25,7 +25,11 @@ defmodule Pokemon.MixProject do
     [
       {:httpoison, "~> 1.6"},
       {:jason, "~> 1.2"},
-      {:mock, "~> 0.3"}
+      {:mock, "~> 0.3"},
+      # web
+      {:plug, "~> 1.6"},
+      {:plug_cowboy, "~> 2.0"},
+      {:cowboy, "~> 2.4"}
     ]
   end
 
