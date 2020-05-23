@@ -7,7 +7,8 @@ defmodule Pokemon.MixProject do
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -25,6 +26,13 @@ defmodule Pokemon.MixProject do
       {:httpoison, "~> 1.6"},
       {:jason, "~> 1.2"},
       {:mock, "~> 0.3"}
+    ]
+  end
+
+  defp aliases do
+    [
+      c: "compile",
+      "format.all": "format mix.exs 'lib/**/*.{ex,exs}' 'test/**/*.{ex,exs}' 'config/*.{ex,exs}'"
     ]
   end
 end
