@@ -1,6 +1,5 @@
 defmodule PokemonClientTest do
   use ExUnit.Case
-  doctest Pokemon
 
   alias Pokemon.PokemonClient
 
