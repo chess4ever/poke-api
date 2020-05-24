@@ -1,8 +1,9 @@
 defmodule Pokemon.ShakespeareClient do
   require Logger
 
-  @shakespeare_url "https://api.funtranslations.com/translate/shakespeare.json"
-  @headers %{"Content-Type" => "application/x-www-form-urlencoded"}
+  @funtranslations_config Application.fetch_env!(:pokemon, :funtranslations)
+  @shakespeare_url Keyword.fetch!(@funtranslations_config, :shakespeare_url)
+  @headers Keyword.fetch!(@funtranslations_config, :headers)
 
   def translate(text) do
     with {:ok, %{body: body, status_code: 200}} <-

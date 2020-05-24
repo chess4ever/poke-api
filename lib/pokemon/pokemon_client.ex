@@ -5,10 +5,11 @@ defmodule Pokemon.PokemonClient do
 
   require Logger
 
-  @pokemon_url "https://pokeapi.co/api/v2/pokemon"
-  @pokemon_species_url "https://pokeapi.co/api/v2/pokemon-species"
-  @pokemon_version "alpha-sapphire"
-  @language "en"
+  @pokeapi_config Application.fetch_env!(:pokemon, :pokeapi)
+  @pokemon_url Keyword.fetch!(@pokeapi_config, :pokemon_url)
+  @pokemon_species_url Keyword.fetch!(@pokeapi_config, :pokemon_species_url)
+  @pokemon_version Keyword.fetch!(@pokeapi_config, :version)
+  @language Keyword.fetch!(@pokeapi_config, :language)
 
   @not_found_message :pokemon_not_found
 
